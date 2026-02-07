@@ -1,0 +1,124 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* ===== MAIN WEBSITE (index.html) ===== */
+
+.main-title {
+  margin-top: 20px;
+  color: #c9184a;
+}
+
+.main-hint {
+  color: #555;
+  font-size: 16px;
+}
+
+/* floating rose IMAGE on main page */
+#main-rose {
+  position: absolute;
+  width: 150px;          /* change size HERE */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 5;
+}
+
+#main-rose:hover {
+  transform: scale(1.2);
+}
+
+/* ===== ROSE PAGE (rose.html) ===== */
+
+/* emoji roses overlay */
+#rose-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity 3s ease;
+}
+
+#rose-layer.fade-out {
+  opacity: 0;
+}
+
+/* floating ROSE EMOJI */
+.floating-rose {
+  position: absolute;
+  font-size: 42px;      /* emoji size HERE */
+  bottom: -60px;
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* rose movement */
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-130vh);
+    opacity: 0;
+  }
+}
+
+/* ===== MESSAGE BOX ===== */
+
+#message {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  margin-top: 100px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #c9184a;
+  transition: opacity 2.5s ease, transform 2.5s ease;
+  transform: translateY(40px);
+}
+
+#message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* message lines */
+#message p {
+  margin: 10px 0;
+}
+
+/* emphasis line */
+.final-line {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* dedication */
+.dedication {
+  margin-top: 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Tamaki GIF */
+.tamaki {
+  margin-top: 20px;
+  width: 220px;
+  border-radius: 15px;
+}

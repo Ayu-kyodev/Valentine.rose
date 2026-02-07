@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Rose Day 🌹</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio autoplay>
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ROSE EMOJI OVERLAY -->
+  <div id="rose-layer"></div>
+
+  <!-- MESSAGE (HIDDEN INITIALLY) -->
+  <div id="message">
+    <h1>🌹 Happy Rose Day 🌹</h1>
+
+    <p>This rose is not just a flower.</p>
+    <p>It’s every soft thought of you,</p>
+    <p>every calm moment you give me,</p>
+    <p>every quiet smile you don’t even notice.</p>
+
+    <p class="final-line">I choose you — gently, honestly, always.</p>
+
+    <p class="dedication">For my love, Zainub ❤️</p>
+
+    <img
+      src="tamaki-sassy.gif"
+      class="tamaki"
+      alt="Tamaki"
+    >
+  </div>
+
+  <script>
+    const roseLayer = document.getElementById("rose-layer");
+    const messageBox = document.getElementById("message");
+
+    const ROSE_COUNT = 80;        // how many 🌹 emojis
+    const DURATION = 20000;       // 20 seconds
+
+    // CREATE ROSE EMOJIS
+    for (let i = 0; i < ROSE_COUNT; i++) {
+      const rose = document.createElement("div");
+      rose.className = "floating-rose";
+      rose.innerText = "🌹";               // 🌹 EMOJI IS HERE
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDelay = Math.random() * 5 + "s";
+      rose.style.animationDuration = (6 + Math.random() * 5) + "s";
+      roseLayer.appendChild(rose);
+    }
+
+    // AFTER 20 SECONDS → FADE ROSES + SHOW MESSAGE
+    setTimeout(() => {
+      roseLayer.classList.add("fade-out");
+      messageBox.classList.add("show");
+    }, DURATION);
+  </script>
+
+</body>
+</html>
